@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   d.c                                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vnascime </var/mail/vnascime>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/14 16:47:22 by vnascime          #+#    #+#             */
+/*   Updated: 2020/12/14 16:52:24 by vnascime         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include "libft.h"
 #include <limits.h>
 
-static intmax_t		get_num(t_top *top)
+static intmax_t			get_num(t_top *top)
 {
-	intmax_t	num;
+	intmax_t			num;
 
 	if (top->spec_flag == 'D')
 		num = (long)(va_arg(top->args, long int));
@@ -26,21 +38,21 @@ static intmax_t		get_num(t_top *top)
 	return (num);
 }
 
-static int		get_tens(intmax_t num)
+static int			get_tens(intmax_t num)
 {
-	int		tens;
+	int				tens;
 
 	if (num < 0)
 		num *= -1;
 	tens = 1;
-	while ((num /= 10)> 0)
+	while ((num /= 10) > 0)
 		tens++;
 	return (tens);
 }
 
-static char		get_neg(t_top *top, int is_neg)
+static char			get_neg(t_top *top, int is_neg)
 {
-	char		*tmp;
+	char			*tmp;
 
 	tmp = top->convert;
 	if (is_neg)
@@ -52,11 +64,12 @@ static char		get_neg(t_top *top, int is_neg)
 	return ('\0');
 }
 
-static t_top		*d_op(t_top *top, intmax_t num, int num_width, int align_left)
+static t_top		*d_op(t_top *top, intmax_t num, int num_width,
+		int align_left)
 {
-	int		has_value;
-	char		neg;
-	int		is_neg;
+	int				has_value;
+	char			neg;
+	int				is_neg;
 
 	is_neg = (num < 0) ? 1 : 0;
 	num *= (is_neg && num != (-9223372036854775807 - 1)) ? -1 : 1;
@@ -83,9 +96,9 @@ static t_top		*d_op(t_top *top, intmax_t num, int num_width, int align_left)
 
 t_top			*display_d(t_top *top)
 {
-	intmax_t	num;
-	int		num_width;
-	int		align_left;
+	intmax_t		num;
+	int				num_width;
+	int				align_left;
 
 	num = get_num(top);
 	if (num == 0 && top->precision == 0)

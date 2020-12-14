@@ -1,16 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   o.c                                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vnascime </var/mail/vnascime>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/14 16:55:12 by vnascime          #+#    #+#             */
+/*   Updated: 2020/12/14 16:57:53 by vnascime         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include "libft.h"
 #include <limits.h>
 
-static void		leading_zero(uintmax_t num, char hash)
+static void				leading_zero(uintmax_t num, char hash)
 {
 	if (hash == '#' && num)
 		write(1, "0", 1);
 }
 
-static uintmax_t	get_num(t_top *top)
+static uintmax_t		get_num(t_top *top)
 {
-	uintmax_t	num;
+	uintmax_t			num;
 
 	if (top->spec_flag == 'O')
 		num = (unsigned long)(va_arg(top->args, unsigned long int));
@@ -32,10 +44,11 @@ static uintmax_t	get_num(t_top *top)
 	return (num);
 }
 
-static t_top		*print_u(t_top *top, uintmax_t num, char *str, int align_left)
+static t_top			*print_u(t_top *top, uintmax_t num, char *str,
+		int align_left)
 {
-	int		has_value;
-	int		num_width;
+	int					has_value;
+	int					num_width;
 
 	num_width = ft_strlen(str);
 	if (top->convert[4] == '#' && num)
@@ -53,14 +66,13 @@ static t_top		*print_u(t_top *top, uintmax_t num, char *str, int align_left)
 	if (align_left)
 		display_gap(top, ' ', top->fwidth - has_value, 0);
 	return (top);
-
 }
 
-t_top			*display_o(t_top *top)
+t_top					*display_o(t_top *top)
 {
-	char		*str;
-	uintmax_t	num;
-	int		align_left;
+	char				*str;
+	uintmax_t			num;
+	int					align_left;
 
 	align_left = 0;
 	num = get_num(top);

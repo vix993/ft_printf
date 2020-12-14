@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vnascime </var/mail/vnascime>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/14 16:54:05 by vnascime          #+#    #+#             */
+/*   Updated: 2020/12/14 16:54:40 by vnascime         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include "libft.h"
 #include <unistd.h>
@@ -16,9 +28,9 @@ static void			print_format(t_top *top, int count)
 	format = NULL;
 }
 
-int	parse(t_top *top)
+int					parse(t_top *top)
 {
-	int		count;
+	int				count;
 
 	count = 0;
 	if (ft_strcmp(top->f_copy, "%") == 0)
@@ -42,4 +54,3 @@ int	parse(t_top *top)
 	print_format(top, count);
 	return (top->len);
 }
-
