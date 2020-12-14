@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vnascime </var/mail/vnascime>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/14 17:20:33 by vnascime          #+#    #+#             */
+/*   Updated: 2020/12/14 17:20:56 by vnascime         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdarg.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -6,7 +18,7 @@
 int	ft_printf(const char *format, ...)
 {
 	t_top	*top;
-	int	len;
+	int		len;
 
 	if (!(top = (t_top*)malloc(sizeof(t_top))))
 		return (-1);
@@ -22,4 +34,3 @@ int	ft_printf(const char *format, ...)
 	free(top);
 	return (len);
 }
-

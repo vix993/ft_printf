@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   x.c                                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vnascime </var/mail/vnascime>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/14 17:16:48 by vnascime          #+#    #+#             */
+/*   Updated: 2020/12/14 17:18:29 by vnascime         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include "libft.h"
 #include <limits.h>
 
-static void		leading_zero(uintmax_t num, char hash, char x)
+static void			leading_zero(uintmax_t num, char hash, char x)
 {
 	if (num)
 	{
@@ -50,7 +62,8 @@ static t_top		*x_op(t_top *top, uintmax_t num, char *str, int align_left)
 		top->fwidth -= 2;
 		top->len += 2;
 	}
-	num_b = (num_w <= top->precision && top->precision > 0) ? top->precision : num_w;
+	num_b = (num_w <= top->precision && top->precision > 0)
+		? top->precision : num_w;
 	top->len += (num_b <= top->fwidth) ? top->fwidth : num_b;
 	if (!align_left)
 		display_gap(top, ' ', top->fwidth - num_b, 0);
@@ -62,13 +75,13 @@ static t_top		*x_op(t_top *top, uintmax_t num, char *str, int align_left)
 	return (top);
 }
 
-t_top			*display_x(t_top *top)
+t_top				*display_x(t_top *top)
 {
 	char		*str;
 	char		c;
 	uintmax_t	num;
-	int		align_left;
-	
+	int			align_left;
+
 	align_left = 0;
 	num = get_num(top);
 	if (num == 0 && top->precision == 0)

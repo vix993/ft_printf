@@ -6,7 +6,7 @@
 /*   By: vnascime </var/mail/vnascime>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/14 16:47:22 by vnascime          #+#    #+#             */
-/*   Updated: 2020/12/14 16:52:24 by vnascime         ###   ########.fr       */
+/*   Updated: 2020/12/14 17:20:06 by vnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static intmax_t			get_num(t_top *top)
 	return (num);
 }
 
-static int			get_tens(intmax_t num)
+static int				get_tens(intmax_t num)
 {
 	int				tens;
 
@@ -50,7 +50,7 @@ static int			get_tens(intmax_t num)
 	return (tens);
 }
 
-static char			get_neg(t_top *top, int is_neg)
+static char				get_neg(t_top *top, int is_neg)
 {
 	char			*tmp;
 
@@ -64,7 +64,7 @@ static char			get_neg(t_top *top, int is_neg)
 	return ('\0');
 }
 
-static t_top		*d_op(t_top *top, intmax_t num, int num_width,
+static t_top			*d_op(t_top *top, intmax_t num, int num_width,
 		int align_left)
 {
 	int				has_value;
@@ -94,7 +94,7 @@ static t_top		*d_op(t_top *top, intmax_t num, int num_width,
 	return (top);
 }
 
-t_top			*display_d(t_top *top)
+t_top					*display_d(t_top *top)
 {
 	intmax_t		num;
 	int				num_width;
