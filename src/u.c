@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   u.c                                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vnascime </var/mail/vnascime>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/14 17:07:02 by vnascime          #+#    #+#             */
+/*   Updated: 2020/12/14 17:09:48 by vnascime         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include "libft.h"
 #include <limits.h>
 
 static uintmax_t	get_num(t_top *top)
 {
-	uintmax_t	num;
+	uintmax_t		num;
 
 	if (top->spec_flag == 'U')
 		num = (unsigned long)(va_arg(top->args, unsigned long int));
@@ -24,12 +36,11 @@ static uintmax_t	get_num(t_top *top)
 		num = (unsigned int)(va_arg(top->args, unsigned int));
 	num = (uintmax_t)num;
 	return (num);
-
 }
 
-static int		get_tens(uintmax_t num)
+static int			get_tens(uintmax_t num)
 {
-	int		tens;
+	int			tens;
 
 	tens = 1;
 	while ((num /= 10) > 0)
@@ -39,7 +50,7 @@ static int		get_tens(uintmax_t num)
 
 static t_top		*u_op(t_top *top, uintmax_t num, int num_width, int left)
 {
-	int		has_value;
+	int			has_value;
 
 	has_value = num_width;
 	if (num_width <= top->precision)
@@ -54,11 +65,11 @@ static t_top		*u_op(t_top *top, uintmax_t num, int num_width, int left)
 	return (top);
 }
 
-t_top			*display_u(t_top *top)
+t_top				*display_u(t_top *top)
 {
 	uintmax_t	num;
-	int		num_width;
-	int		left;
+	int			num_width;
+	int			left;
 
 	left = 0;
 	num = get_num(top);

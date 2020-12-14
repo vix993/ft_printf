@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   p.c                                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vnascime </var/mail/vnascime>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/14 17:02:16 by vnascime          #+#    #+#             */
+/*   Updated: 2020/12/14 17:02:18 by vnascime         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include "libft.h"
 #include <limits.h>
@@ -27,14 +39,14 @@ static t_top		*print_u(t_top *top, char *str, int align_left)
 	if (align_left)
 		display_gap(top, ' ', top->fwidth - has_value, 0);
 	free(str);
-	return (top);	
+	return (top);
 }
 
-t_top			*display_p(t_top *top)
+t_top				*display_p(t_top *top)
 {
 	char		*str;
 	uintmax_t	num;
-	int		align_left;
+	int			align_left;
 
 	align_left = 0;
 	num = get_num(top);

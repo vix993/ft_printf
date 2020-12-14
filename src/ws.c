@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ws.c                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vnascime </var/mail/vnascime>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/14 17:10:08 by vnascime          #+#    #+#             */
+/*   Updated: 2020/12/14 17:10:53 by vnascime         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include "libft.h"
 #include <stdlib.h>
 
-static int		char_len(wchar_t c)
+static int			char_len(wchar_t c)
 {
 	int	len;
 
@@ -47,7 +59,7 @@ static wchar_t		*wstrdup(wchar_t *str)
 static t_top		*null_op(t_top *top)
 {
 	wchar_t		*s;
-	int		i;
+	int			i;
 
 	i = 0;
 	s = wstrdup(L"(null)");
@@ -65,12 +77,12 @@ static t_top		*null_op(t_top *top)
 	return (top);
 }
 
-t_top			*display_ws(t_top *top)
+t_top				*display_ws(t_top *top)
 {
 	wchar_t		*s;
-	int		i;
-	int		j;
-	int		len;
+	int			i;
+	int			j;
+	int			len;
 
 	i = 0;
 	len = 0;

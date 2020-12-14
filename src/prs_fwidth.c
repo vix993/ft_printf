@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   prs_fwidth.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vnascime </var/mail/vnascime>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/14 17:03:27 by vnascime          #+#    #+#             */
+/*   Updated: 2020/12/14 17:03:53 by vnascime         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-static t_top	*arg_fwidth(t_top *top)
+static t_top		*arg_fwidth(t_top *top)
 {
 	int	fwidth;
 
@@ -15,7 +27,7 @@ static t_top	*arg_fwidth(t_top *top)
 	return (top);
 }
 
-t_top		*prs_fwidth(t_top *top)
+t_top				*prs_fwidth(t_top *top)
 {
 	if (top->f_treat[top->i] == '*')
 	{
@@ -33,4 +45,3 @@ t_top		*prs_fwidth(t_top *top)
 	}
 	return (top);
 }
-

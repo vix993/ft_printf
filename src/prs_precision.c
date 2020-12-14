@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   prs_precision.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vnascime </var/mail/vnascime>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/14 17:04:09 by vnascime          #+#    #+#             */
+/*   Updated: 2020/12/14 17:04:26 by vnascime         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 static t_top	*arg_precision(t_top *top)
@@ -14,7 +26,7 @@ static t_top	*arg_precision(t_top *top)
 	return (top);
 }
 
-t_top		*prs_precision(t_top *top)
+t_top			*prs_precision(t_top *top)
 {
 	while (top->f_treat[top->i] == '.')
 	{
@@ -37,4 +49,3 @@ t_top		*prs_precision(t_top *top)
 	}
 	return (top);
 }
-

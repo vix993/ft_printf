@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   other.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vnascime </var/mail/vnascime>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/14 17:01:00 by vnascime          #+#    #+#             */
+/*   Updated: 2020/12/14 17:01:01 by vnascime         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include <unistd.h>
 
@@ -19,7 +31,7 @@ static t_top		*display_percent(t_top *top)
 	return (top);
 }
 
-t_top			*display_other(t_top *top)
+t_top				*display_other(t_top *top)
 {
 	if (top->f_treat[top->i] == '%')
 	{
