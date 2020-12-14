@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vnascime </var/mail/vnascime>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/14 16:42:55 by vnascime          #+#    #+#             */
+/*   Updated: 2020/12/14 16:45:13 by vnascime         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
@@ -12,7 +24,7 @@ typedef struct	s_top
 	char		*f_copy;
 	char		*f_treat;
 	va_list		args;
-	int		len;
+	int			len;
 	size_t		i;
 	long int	precision;
 	long int	fwidth;
@@ -22,14 +34,14 @@ typedef struct	s_top
 	char		*spec_mask;
 	char		*converter_mask;
 	char		*arg_mask;
-}		t_top;
+}				t_top;
 
-int		ft_printf(const char *format, ...);
-int		treat(t_top *top);
-int		parse(t_top *top);
+int				ft_printf(const char *format, ...);
+int				treat(t_top *top);
+int				parse(t_top *top);
 
-t_top		*init(t_top *top);
-t_top		*reinit(t_top *top);
+t_top			*init(t_top *top);
+t_top			*reinit(t_top *top);
 
 t_top			*prs_convert(t_top *top);
 t_top			*prs_fwidth(t_top *top);
