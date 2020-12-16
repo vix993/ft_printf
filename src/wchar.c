@@ -55,7 +55,7 @@ void			display_wchar(wint_t c, t_top *top)
 		top->len += 1;
 		oct_1(c);
 	}
-	if (c >= 127 && c <= 2047)
+	if (c >= 128 && c <= 2047)
 	{
 		top->len += 2;
 		oct_2(c);

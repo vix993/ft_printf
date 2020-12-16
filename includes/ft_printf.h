@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vnascime </var/mail/vnascime>              +#+  +:+       +#+        */
+/*   By: vnascime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/14 16:42:55 by vnascime          #+#    #+#             */
 /*   Updated: 2020/12/14 16:45:13 by vnascime         ###   ########.fr       */

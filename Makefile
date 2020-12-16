@@ -4,7 +4,7 @@ LIBFT_A =	libft.a
 COMP =		gcc -Wall -Werror -Wextra $(PRINTF_H) $(LIBFT_H) -c -o
 
 PRINTF_H =	-I includes/
-LIBFT_H = 	-I src/libft/includes
+LIBFT_H = 	-I src/libft
 
 OBJ_DIR =	obj/
 SRC_DIR =	src/

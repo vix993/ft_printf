@@ -49,7 +49,8 @@ int					parse(t_top *top)
 			count++;
 			top->len++;
 		}
-		top->i++;
+		if (top->f_copy[top->i] != '\0')
+			top->i++;
 	}
 	print_format(top, count);
 	return (top->len);

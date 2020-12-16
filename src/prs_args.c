@@ -19,7 +19,7 @@ t_top		*prs_args(t_top *top)
 
 	i = 0;
 	j = 0;
-	while (top->arg_mask[i] != '\0')
+	while (top->arg_mask[i] != '\0' && top->f_treat[top->i] != '\0')
 	{
 		while (top->arg_mask[i] == top->f_treat[top->i])
 		{

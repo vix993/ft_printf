@@ -20,7 +20,7 @@ static int			char_len(wchar_t c)
 
 	if (c <= 127)
 		len = 1;
-	else if (c >= 127 && c <= 2047)
+	else if (c >= 128 && c <= 2047)
 		len = 2;
 	else if (c >= 2048 && c <= 65535)
 		len = 3;
